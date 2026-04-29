@@ -1,0 +1,34 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity transcodeur_7seg is
+    Port ( 
+        BIN : in  STD_LOGIC_VECTOR (3 downto 0); -- Valeur d'entrée encodée en binaire [cite: 101]
+        SEG : out STD_LOGIC_VECTOR (6 downto 0)  -- Valeur mise en forme pour les afficheurs [cite: 101]
+    );
+end transcodeur_7seg;
+
+architecture Behavioral of transcodeur_7seg is
+begin
+    -- Encodage des segments en logique inverse (0 = allumé, 1 = éteint) 
+    -- Ordre des segments : g f e d c b a [cite: 88]
+    with BIN select
+        SEG <= 
+            "1000000" when "0000", -- 0
+            "1111001" when "0001", -- 1
+            "0100100" when "0010", -- 2 (Conforme à l'exemple du PDF )
+            "0110000" when "0011", -- 3
+            "0011001" when "0100", -- 4
+            "0010010" when "0101", -- 5
+            "0000010" when "0110", -- 6
+            "1111000" when "0111", -- 7
+            "0000000" when "1000", -- 8
+            "0010000" when "1001", -- 9
+            "0001000" when "1010", -- A
+            "0000011" when "1011", -- b
+            "1000110" when "1100", -- C
+            "0100001" when "1101", -- d
+            "0000110" when "1110", -- E
+            "0001110" when "1111", -- F
+            "1111111" when others; -- Tout éteint par défaut
+end Behavioral;
