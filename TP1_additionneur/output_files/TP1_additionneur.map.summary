@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Wed Apr 29 09:30:53 2026
+Analysis & Synthesis Status : Successful - Mon May  4 14:33:01 2026
 Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 Revision Name : TP1_additionneur
-Top-level Entity Name : full_adder_4b
+Top-level Entity Name : flipflop_JK
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 0
-Total pins : 14
+Total registers : 1
+Total pins : 5
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0
