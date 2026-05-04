@@ -37,6 +37,7 @@
 !*.jpeg
 !*.bmp
 !*.pdf
+!*.webp
 
 # Subdirectories
 !*/
