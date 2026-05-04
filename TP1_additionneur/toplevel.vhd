@@ -5,7 +5,7 @@ entity toplevel is
     port (
         HEX3 : out std_logic_vector(6 downto 0);
         HEX2 : out std_logic_vector(6 downto 0);
-        HEX1 : out std_logic_vector(6 downto 0); -- Ajout de HEX1
+        HEX1 : out std_logic_vector(6 downto 0);
         HEX0 : out std_logic_vector(6 downto 0);
         SW   : in  std_logic_vector(9 downto 0) 
     );
