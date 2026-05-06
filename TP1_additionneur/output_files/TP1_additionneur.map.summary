@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Wed May  6 09:57:03 2026
+Analysis & Synthesis Status : Successful - Wed May  6 10:46:41 2026
 Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 Revision Name : TP1_additionneur
-Top-level Entity Name : toplevel_tp3
+Top-level Entity Name : toplevel
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 34
-Total pins : 15
+Total registers : 4
+Total pins : 13
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

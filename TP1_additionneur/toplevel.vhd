@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity toplevel is
+entity toplevel_tp1 is
     port (
         HEX3 : out std_logic_vector(6 downto 0);
         HEX2 : out std_logic_vector(6 downto 0);
@@ -9,9 +9,9 @@ entity toplevel is
         HEX0 : out std_logic_vector(6 downto 0);
         SW   : in  std_logic_vector(9 downto 0) 
     );
-end toplevel;
+end toplevel_tp1;
 
-architecture Structural of toplevel is
+architecture Structural of toplevel_tp1 is
 
     component full_adder_4b
         port ( 
