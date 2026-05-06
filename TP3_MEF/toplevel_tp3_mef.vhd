@@ -1,15 +1,15 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity toplevel is
+entity toplevel_tp3_mef is
     Port (
         CLOCK_50_B6A : in  STD_LOGIC;
         KEY          : in  STD_LOGIC_VECTOR(3 downto 0);
         LEDG         : out STD_LOGIC_VECTOR(7 downto 0)
     );
-end toplevel;
+end toplevel_tp3_mef;
 
-architecture Behavioral of toplevel is
+architecture Behavioral of toplevel_tp3_mef is
 
     component bistable
         Port (

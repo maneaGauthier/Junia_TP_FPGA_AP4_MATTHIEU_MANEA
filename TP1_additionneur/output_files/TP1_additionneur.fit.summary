@@ -1,7 +1,7 @@
-Fitter Status : Successful - Wed May  6 10:46:57 2026
+Fitter Status : Successful - Wed May  6 14:09:15 2026
 Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 Revision Name : TP1_additionneur
-Top-level Entity Name : toplevel
+Top-level Entity Name : toplevel_tp3_mef
 Family : Cyclone V
 Device : 5CGXFC5C6F27C7
 Timing Models : Final
