@@ -3,15 +3,15 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity transcodeur_7seg is
     Port ( 
-        BIN : in  STD_LOGIC_VECTOR (3 downto 0); -- Valeur d'entrée encodée en binaire [cite: 101]
-        SEG : out STD_LOGIC_VECTOR (6 downto 0)  -- Valeur mise en forme pour les afficheurs [cite: 101]
+        BIN : in  STD_LOGIC_VECTOR (3 downto 0); -- Valeur d'entrée encodée en binaire
+        SEG : out STD_LOGIC_VECTOR (6 downto 0)  -- Valeur mise en forme pour les afficheurs
     );
 end transcodeur_7seg;
 
 architecture Behavioral of transcodeur_7seg is
 begin
     -- Encodage des segments en logique inverse (0 = allumé, 1 = éteint) 
-    -- Ordre des segments : g f e d c b a [cite: 88]
+    -- Ordre des segments : g f e d c b a
     with BIN select
         SEG <= 
             "1000000" when "0000", -- 0

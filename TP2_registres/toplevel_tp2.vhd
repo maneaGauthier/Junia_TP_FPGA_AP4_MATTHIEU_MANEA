@@ -45,7 +45,7 @@ begin
         SEL  => SW(2 downto 0),   -- SEL connecté à SW2-SW0
         CLK  => clk_inv,          -- CLK connecté à not(KEY0)
         SETn => KEY(2),           -- SETn connecté à KEY2
-        RSTn => KEY(3),           -- RSTn connecté à KEY3 (Note: le sujet mentionne "KEY31", ce qui est probablement une typo pour KEY3)
+        RSTn => KEY(3),           -- RSTn connecté à KEY3
         SOR  => open,             -- Non connecté (-)
         SOL  => open,             -- Non connecté (-)
         Qo   => LEDG(7 downto 0)  -- Q7-Q0 connectés à LEDG7-0

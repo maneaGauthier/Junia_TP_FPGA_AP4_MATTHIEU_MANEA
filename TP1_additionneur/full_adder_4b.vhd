@@ -1,6 +1,8 @@
--- On assemble ici 4 blocs 'full_adder' de 1 bit
--- On va "chaîner" les retenues : la sortie Cout du bit N devient le Cin du bit N+1
--- C'est un Ripple-Carry Adder
+----------------------------------------------------------------------------------
+-- Additionneur 4-bits à propagation de retenue (Ripple-Carry Adder)
+--
+-- Ce module assemble 4 blocs 'full_adder' de 1 bit.
+-- Les retenues sont chaînées : la sortie Cout du bit N est connectée au Cin du bit N+1.
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -17,7 +19,7 @@ end full_adder_4b;
 
 architecture Structural of full_adder_4b is
 
-    -- On récupère notre bloc de l'exercice précédent
+    -- Déclaration du composant full_adder
     component full_adder is
         Port ( 
             A    : in  STD_LOGIC;
@@ -28,13 +30,13 @@ architecture Structural of full_adder_4b is
         );
     end component;
 
-    -- Ces signaux servent de "ponts" entre les additionneurs
-    -- C(1) transporte la retenue du bit 0 vers le bit 1, etc
+    -- Signaux internes pour la propagation des retenues entre les étages.
+    -- C(1) transporte la retenue du bit 0 vers le bit 1, etc.
     signal C : STD_LOGIC_VECTOR (3 downto 1);
 
 begin
 
-    -- On commence par les bits de poids faible
+    -- Bit de poids faible (LSB)
     FA0: full_adder port map (
         A    => A(0),
         B    => B(0),
@@ -43,7 +45,7 @@ begin
         Cout => C(1)
     );
 
-    -- Reçoit la retenue du bit 0
+    -- Bit 1 (reçoit la retenue du bit 0)
     FA1: full_adder port map (
         A    => A(1),
         B    => B(1),
@@ -52,7 +54,7 @@ begin
         Cout => C(2)
     );
 
-    -- Reçoit la retenue du bit 1
+    -- Bit 2 (reçoit la retenue du bit 1)
     FA2: full_adder port map (
         A    => A(2),
         B    => B(2),
@@ -61,7 +63,7 @@ begin
         Cout => C(3)
     );
 
-    -- Le dernier bit. Sa retenue sort vers le port global Cout
+    -- Bit de poids fort (MSB) (sa retenue sort sur le port global Cout)
     FA3: full_adder port map (
         A    => A(3),
         B    => B(3),

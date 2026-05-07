@@ -1,10 +1,12 @@
--- Pour ce module, on n'a pas réécrit de logique brute.
--- On a utiliser l'instanciation de deux 'half_adder' pour
--- gérer la somme et la retenue d'entrée (Cin)
+----------------------------------------------------------------------------------
+-- Additionneur complet 1-bit
 --
--- Le premier demi-additionneur fait A+B, et le deuxième ajoute la retenue Cin 
--- au résultat. La retenue finale (Cout) est activée si l'un des deux étages 
--- génère un débordement (d'où le OR final)
+-- Ce module est construit de manière structurelle en instanciant deux
+-- demi-additionneurs ('half_adder') pour gérer la somme et la retenue d'entrée (Cin).
+-- 
+-- Le premier demi-additionneur effectue l'addition A+B.
+-- Le deuxième ajoute la retenue entrante (Cin) au résultat.
+-- La retenue de sortie (Cout) est activée si l'un des deux étages génère une retenue.
 ----------------------------------------------------------------------------------
 
 library IEEE;
@@ -21,7 +23,7 @@ entity full_adder is
 end full_adder;
 
 architecture Structural of full_adder is
-    -- On déclare le composant qu'on a fabriqué à juste avant
+    -- Déclaration du composant half_adder
     component half_adder is
         Port ( 
             A : in  STD_LOGIC;
@@ -31,7 +33,7 @@ architecture Structural of full_adder is
         );
     end component;
 
-    -- Signaux internes pour "cabler" nos deux demi-additionneurs entre eux
+    -- Signaux internes reliant les deux demi-additionneurs
     signal S1 : STD_LOGIC; -- Somme intermédiaire (A+B)
     signal C1 : STD_LOGIC; -- Retenue de A+B
     signal C2 : STD_LOGIC; -- Retenue de S1+Cin
@@ -47,7 +49,7 @@ begin
         C => C1
     );
 
-    -- Deuxième étage : on ajoute la retenue d'entrée au résultat précédent
+    -- Deuxième étage : ajout de la retenue d'entrée au résultat précédent
     HA2: half_adder
     port map(
         A => S1,

@@ -1,10 +1,9 @@
 ----------------------------------------------------------------------------------
--- Ce module est la brique de base : le demi-additionneur 1-bit.
-
--- La somme (S) correspond bien à un XOR car on veut '1' uniquement quand les entrées sont différentes.
-
--- Pour la retenue (C) un simple AND suffit car elle ne s'active que si A et B sont à '1' en même temps.
-
+-- Demi-additionneur 1-bit
+--
+-- Ce module réalise l'addition de deux bits.
+-- La somme (S) est obtenue par une porte logique XOR.
+-- La retenue (C) est générée par une porte logique AND, active si A et B valent '1'.
 ----------------------------------------------------------------------------------
 
 library IEEE;
