@@ -1,10 +1,10 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity bistable_tb is
-end bistable_tb;
+entity tb_bistable is
+end tb_bistable;
 
-architecture behavior of bistable_tb is
+architecture behavior of tb_bistable is
 
     -- Déclaration du composant à tester
     component bistable
